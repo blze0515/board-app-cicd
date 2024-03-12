@@ -50,7 +50,7 @@ public class SecurityConfiguration {
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/login").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/join").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/id-check").permitAll();
-                        authorizationManagerRequestMatcherRegistry.anyRequest().authenticated();
+                        authorizationManagerRequestMatcherRegistry.anyRequest().permitAll();
                     })
                     .addFilterAfter(jwtAuthenticationFilter, CorsFilter.class)
                     .build();
