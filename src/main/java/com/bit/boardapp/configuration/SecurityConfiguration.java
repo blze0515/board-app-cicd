@@ -50,7 +50,9 @@ public class SecurityConfiguration {
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/login").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/join").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/user/id-check").permitAll();
-                        authorizationManagerRequestMatcherRegistry.anyRequest().permitAll();
+                        //리액트 라우터 기능(페이지 이동하는 기능)들은 모두 permitAll
+                        authorizationManagerRequestMatcherRegistry.requestMatchers("/app/**").permitAll();
+                        authorizationManagerRequestMatcherRegistry.anyRequest().authenticated();
                     })
                     .addFilterAfter(jwtAuthenticationFilter, CorsFilter.class)
                     .build();
