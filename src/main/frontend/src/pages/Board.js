@@ -106,7 +106,7 @@ const Board = () => {
             imageLoader(file);
             uploadFiles.push(file);
         });
-    }, [imageLoader, uploadFiles]);
+    }, []);
 
     // 미리보기 처리 메소드
     // 미리보기될 파일은 업로드가 되어있는 상태가 아니기 때문에
@@ -548,7 +548,7 @@ const Board = () => {
                                         `https://kr.object.ncloudstorage.com/bitcamp-bucket-502/${boardFile.boardFilePath}${boardFile.boardFileName}`
                                     }
                                     onClick={() => openChangeFileInput(boardFile.boardFileNo)}
-                                    alr="미리보기"
+                                    alt="미리보기"
                                 ></img>
                                 <input type='button' className='btnDel' value='x'
                                        style={{width: '30px', height: '30px', position: 'absolute',
