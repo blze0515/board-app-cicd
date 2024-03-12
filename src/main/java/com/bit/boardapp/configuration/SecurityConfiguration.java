@@ -38,6 +38,10 @@ public class SecurityConfiguration {
                     })
                     .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/").permitAll();
+                        authorizationManagerRequestMatcherRegistry.requestMatchers("/favicon.ico").permitAll();
+                        authorizationManagerRequestMatcherRegistry.requestMatchers("/manifest.json").permitAll();
+                        authorizationManagerRequestMatcherRegistry.requestMatchers("/asset-manifest.json").permitAll();
+                        authorizationManagerRequestMatcherRegistry.requestMatchers("/robots.txt").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/index.html").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/static/**").permitAll();
                         authorizationManagerRequestMatcherRegistry.requestMatchers("/images/**").permitAll();
